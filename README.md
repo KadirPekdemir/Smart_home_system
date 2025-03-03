@@ -1,88 +1,21 @@
-# Smart-home-system
-//Kadir PEKDEMİR  
+## Smart Home System
 
+This project is an example of a **Smart Home System** built using **Object-Oriented Programming (OOP)** principles. The system allows users to control various devices within a home, such as lights, thermostats, and security cameras, all through a central interface. 
 
-public class Test {
-	public final static boolean onCome = true;
-	public final static boolean isDay = true;
-	public final static boolean hasMotion = true;
-	public final static int NUM_OF_SECONDS = 5000;
+### Key Features:
+- **Device Management:** Users can add, remove, and control devices such as lights, alarms, and temperature settings.
+- **Automation:** Set rules for automatic actions based on time of day, sensor data, or user preferences.
+- **Security:** Monitor and control security devices like cameras and alarms remotely.
+- **User Profiles:** Multiple users can set personalized preferences and access control.
 
-	public static void main(String[] args) throws Exception  {
+### Technologies Used:
+- **Python** (or your preferred programming language)
+- **Object-Oriented Programming (OOP)**
+- **GUI Library** (if you used a graphical user interface)
+- **Database** (if any, for user and device data storage)
 
-		// Creates a new smart home object
-		SmartHome smartHome = new SmartHome();
+### How it Works:
+- The system is designed using **classes** and **objects**, allowing for a modular and scalable structure. 
+- Each device is represented as an object with properties and methods for controlling it. 
+- A **central controller** manages the interactions between devices and users, ensuring the system runs smoothly.
 
-		// Creates two smart light objects with the given aliases and macIds
-		SmartLight livingRoomLight = new SmartLight("Living Room Light", "AA:BB:CC");
-		SmartLight kitchenLight = new SmartLight("Kitchen Light", "AA:LL:CC");
-
-		// Creates four smart plug objects with the given aliases and macIds
-		SmartPlug kitchenPlug1 = new SmartPlug("Kitchen Plug 1", "DD:KK:FF");
-		SmartPlug kitchenPlug2 = new SmartPlug("Kitchen Plug 2", "DD:LL:FF");
-		SmartPlug livingRoomPlug1 = new SmartPlug("Living Room Plug 1", "DD:GG:FF");
-		SmartPlug livingRoomPlug2 = new SmartPlug("Living Room Plug 2 ", "DD:EE:FF");
-
-		// Creates three smart camera objects with the given aliases, macIds, nightVision properties, and battery life amounts
-		SmartCamera gardenCam = new SmartCamera("Garden Cam", "GG:HH:II", true,  60);
-		SmartCamera childRoomCam = new SmartCamera("Child Room Cam", "JJ:KK:LL", false,  30);
-		SmartCamera gateCam = new SmartCamera("Gate Cam", "MM:NN:SS", true,  50);
-
-
-		// Add these smart objects to the smartHome
-		smartHome.addSmartObject(livingRoomLight);
-		smartHome.addSmartObject(kitchenLight);
-
-		smartHome.addSmartObject(kitchenPlug1);
-		smartHome.addSmartObject(kitchenPlug2);
-		smartHome.addSmartObject(livingRoomPlug1);
-		smartHome.addSmartObject(livingRoomPlug2);
-
-		smartHome.addSmartObject(gardenCam);
-		smartHome.addSmartObject(childRoomCam);
-		smartHome.addSmartObject(gateCam);
-
-		//Invoke controlLocation method of smartHome with the given onCome = true.
-		// You can also invoke this method as --> smartHome.controlLocation(!onCome);
-		smartHome.controlLocation(onCome);
-
-
-		//Invoke controlMotion method of smartHome with the given hasMotion = true and isDay = true.
-		// You can also invoke this method as --> smartHome.controlMotion(!hasMotion, !isDay);
-		smartHome.controlMotion(hasMotion, isDay);
-
-
-		//Invoke controlTimerRandomly method of smartHome
-		// You can also invoke the method  --> smartHome.controlTimer(10);
-		smartHome.controlTimerRandomly();
-
-		//the system is sleeping for 5 seconds
-		sleepSystem();
-
-
-		//Invoke controlProgrammable method of smartHome
-		smartHome.controlProgrammable();
-
-		//the system is sleeping for another 5 seconds
-		sleepSystem();
-
-
-		//Invoke controlProgrammable method of smartHome
-		smartHome.controlProgrammable();
-
-
-		//Invoke sortCameras method of smartHome
-		smartHome.sortCameras();
-
-
-		System.out.println("System exiting..");
-
-	}
-
-	public static void sleepSystem() throws Exception{
-		System.out.println("System sleeping for " + (NUM_OF_SECONDS/1000) +" seconds");
-		Thread.sleep(NUM_OF_SECONDS);
-		System.out.println("System starting");
-	}
-
-}
